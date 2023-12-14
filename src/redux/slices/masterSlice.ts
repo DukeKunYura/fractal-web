@@ -1,19 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    search: '',
+    currentStep: 1,
     activeLink: 'Home',
-    isActivePersonAdder: false,
-    isActiveCarAdder: false,
-    isActiveCarRegistration: false,
 };
 
 export const masterSlice = createSlice({
     name: 'master',
     initialState,
     reducers: {
-        setSearch: (state, action) => {
-            state.search = action.payload;
+        setStep: (state, action: PayloadAction<number>) => {
+            state.currentStep = action.payload;
         },
         setActiveLink: (state, action) => {
             state.activeLink = action.payload;
@@ -21,6 +18,6 @@ export const masterSlice = createSlice({
     },
 });
 
-export const { setSearch, setActiveLink } = masterSlice.actions;
+export const { setStep } = masterSlice.actions;
 
 export default masterSlice.reducer;

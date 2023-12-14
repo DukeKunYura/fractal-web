@@ -1,0 +1,72 @@
+.progress {
+    position: relative;
+    width: 400px;
+    margin-bottom: 30px;
+
+    %progress_bar {
+        position: absolute;
+        background: lightseagreen;
+        height: 4px;
+
+        top: 50%;
+        left: 0;
+    }
+    .progress_bar_one {
+        @extend %progress_bar;
+        width: 0%;
+    }
+    .progress_bar_two {
+        @extend %progress_bar;
+        width: 33%;
+    }
+    .progress_bar_three {
+        @extend %progress_bar;
+        width: 66%;
+    }
+    .progress_bar_four {
+        @extend %progress_bar;
+        width: 100%;
+    }
+
+    .progress_num {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        &:before {
+            content: '';
+            background-color: lightgray;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            z-index: -1;
+        }
+
+        %step {
+            border: 3px solid lightgray;
+            border-radius: 100%;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            background-color: lightgray;
+            font-family: sans-serif;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .step {
+            @extend %step;
+        }
+        .step_active {
+            @extend %step;
+            border-color: lightseagreen;
+            background-color: lightseagreen;
+            color: #fff;
+        }
+    }
+}
