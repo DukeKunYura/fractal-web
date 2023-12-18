@@ -46,7 +46,7 @@ export const ProgressBar: FC = () => {
                 </ul>
             </div>
 
-            <button
+            {/* <button
                 onClick={() => {
                     handlePrev();
                 }}
@@ -59,7 +59,7 @@ export const ProgressBar: FC = () => {
                 }}
             >
                 {'-->'}
-            </button>
+            </button> */}
             <br />
         </>
     );
